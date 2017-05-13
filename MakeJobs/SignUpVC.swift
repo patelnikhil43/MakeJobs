@@ -7,34 +7,97 @@
 //
 
 import UIKit
+import Firebase
+import KeychainSwift
 
 class SignUpVC: UIViewController {
+    
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var passworrdField: UITextField!
+    @IBOutlet weak var confirmPassword: UITextField!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view.
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let keyChain = DataSerivce().keyChain
+        if keyChain.get("uid") != nil{
+            performSegue(withIdentifier: "SignUp", sender: nil)
+        }
+    }
+    
+    func completeSignIn(id: String){
+        let key = DataSerivce().keyChain
+        key.set(id, forKey: "uid")
+    }
+    
+    func alertCall(title: String, message: String) {
+        // create the alert
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        //Add an action aka Button
+         alert.addAction(UIAlertAction(title: "Let's Fix It!", style: UIAlertActionStyle.default, handler: nil))
+        //Present the alert
+        self.present(alert, animated: true, completion: nil)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func letsGoPressed(_ sender: Any) {
+        
+        if (nameField.text != nil) && (emailField.text != nil) && (passworrdField.text !=  nil) && (confirmPassword.text != nil) {
+            if (confirmPassword.text == passworrdField.text){
+                let name = nameField.text
+                let email = emailField.text
+                let password = passworrdField.text
+                FIRAuth.auth()?.createUser(withEmail: email!, password: password!, completion: { (user, error) in
+                    if error != nil {
+                        print(error!.localizedDescription)
+                    }else {
+                        guard let uid = user?.uid else{
+                            return
+                        }
+                        let values  = ["name:" : name, "email" : email]
+                        self.registerUserIntoDatabaseWithUID(uid: uid, values: values as [String: AnyObject])
+                         ////Going to Register User into Database
+                    }//End of Else
+                })//End of FURAuth
+            } else {
+                alertCall(title: "Passwords Not Matching", message: "Make sure your password macthes.")
+            }
+        }else{
+            alertCall(title: "Empty FIeld/s", message: "Make sure you fill in all the information")
+        }
+
     }
+    
+    func registerUserIntoDatabaseWithUID(uid: String, values: [String: AnyObject]) {
+        //Saving user in DataBase Name and Email
+        let ref = FIRDatabase.database().reference(fromURL: "https://makejobs-f8b21.firebaseio.com/")
+        let usersFolder = ref.child("Users").child((uid)) //creates users folder and inside of that creates another folder of users UID
+        //        let values = ["name": name, "email": email, "profileImageUrl": metadata.downloadUrl]
+        usersFolder.updateChildValues(values, withCompletionBlock: { (err, ref) in //means that update name and email inside the users/UID folder
+            if err != nil {
+                print(err!)  ///If there is an error
+                return
+            }
+            //User Saved in DB
+            print("User Saved in Database")
+        })
+        //Ends here for that
+        self.completeSignIn(id: uid)
+        self.dismiss(animated: true, completion: nil)
+
+    }
+
     
     @IBAction func backPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
         self.performSegue(withIdentifier: "back", sender: nil)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

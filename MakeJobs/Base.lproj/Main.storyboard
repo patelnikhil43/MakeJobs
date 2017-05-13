@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Q3B-Dw-bFM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -381,7 +381,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QY3-09-Bjz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-33.75" y="-1033.0985915492959"/>
+            <point key="canvasLocation" x="-223" y="-1287"/>
         </scene>
         <!--Sign InVC-->
         <scene sceneID="tne-QT-ifu">
@@ -451,6 +451,9 @@
                                     <constraint firstAttribute="width" constant="130" id="Sr1-YW-PmI"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="back arrow"/>
+                                <connections>
+                                    <action selector="signInPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xkT-Xh-eKR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7AB-6P-Mnl">
                                 <rect key="frame" x="16" y="511" width="288" height="47"/>
@@ -483,12 +486,15 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emailField" destination="ynu-3b-LyX" id="Adl-SU-wBj"/>
+                        <outlet property="passwordField" destination="ZwO-ds-wvp" id="5kc-hd-a74"/>
                         <segue destination="Lq1-na-Pie" kind="show" identifier="signUpPressed" id="zzy-3h-e4p"/>
+                        <segue destination="Q3B-Dw-bFM" kind="show" identifier="loginSuccess" id="Ksr-iB-sZ6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-8" y="-57"/>
+            <point key="canvasLocation" x="-13" y="-57"/>
         </scene>
         <!--Sign UpVC-->
         <scene sceneID="bBl-Z5-x7m">
@@ -546,7 +552,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hvl-KI-A9o">
                                 <rect key="frame" x="77" y="345" width="207" height="35"/>
@@ -555,7 +561,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" secureTextEntry="YES"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="key" translatesAutoresizingMaskIntoConstraints="NO" id="yTf-Oc-Aqr">
                                 <rect key="frame" x="5" y="295" width="60" height="60"/>
@@ -571,7 +577,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8rn-ed-XTP">
                                 <rect key="frame" x="77" y="240" width="207" height="35"/>
@@ -580,7 +586,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kf1-Dz-oAu">
                                 <rect key="frame" x="16" y="420" width="288" height="55"/>
@@ -597,6 +603,9 @@
                                         <integer key="value" value="25"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="letsGoPressed:" destination="Lq1-na-Pie" eventType="touchUpInside" id="RN4-nl-Zpu"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.23529411764705882" green="0.55686274509803924" blue="0.63921568627450975" alpha="1" colorSpace="deviceRGB"/>
@@ -635,6 +644,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="confirmPassword" destination="hvl-KI-A9o" id="jPA-Sw-iLU"/>
+                        <outlet property="emailField" destination="8rn-ed-XTP" id="cI0-cn-YsX"/>
+                        <outlet property="nameField" destination="P2M-6q-gAa" id="7Tw-9A-hZR"/>
+                        <outlet property="passworrdField" destination="o7o-od-9Nc" id="t73-Jh-1bu"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="back" id="Hb5-M6-Qh6"/>
                     </connections>
                 </viewController>

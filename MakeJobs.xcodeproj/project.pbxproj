@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3102BDD61EC7666C0097DA91 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3102BDD51EC7666C0097DA91 /* DataService.swift */; };
+		3102BDD81EC771850097DA91 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3102BDD71EC771850097DA91 /* User.swift */; };
 		317B9BE21EC69EF800F24216 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317B9BE11EC69EF800F24216 /* AppDelegate.swift */; };
 		317B9BE41EC69EF800F24216 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317B9BE31EC69EF800F24216 /* SignInVC.swift */; };
 		317B9BE71EC69EF800F24216 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 317B9BE51EC69EF800F24216 /* Main.storyboard */; };
 		317B9BEA1EC69EF800F24216 /* MakeJobs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 317B9BE81EC69EF800F24216 /* MakeJobs.xcdatamodeld */; };
 		317B9BEC1EC69EF800F24216 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 317B9BEB1EC69EF800F24216 /* Assets.xcassets */; };
 		317B9BEF1EC69EF800F24216 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 317B9BED1EC69EF800F24216 /* LaunchScreen.storyboard */; };
-		317B9BF71EC6A79200F24216 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317B9BF61EC6A79200F24216 /* File.swift */; };
+		317B9BF71EC6A79200F24216 /* KeyBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317B9BF61EC6A79200F24216 /* KeyBoard.swift */; };
 		317B9BFA1EC6BDE000F24216 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317B9BF91EC6BDE000F24216 /* SignUpVC.swift */; };
 		317B9BFD1EC6D2B300F24216 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317B9BFC1EC6D2B300F24216 /* FeedVC.swift */; };
 		317B9BFF1EC6E01E00F24216 /* PostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317B9BFE1EC6E01E00F24216 /* PostVC.swift */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3102BDD51EC7666C0097DA91 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		3102BDD71EC771850097DA91 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		317B9BDE1EC69EF800F24216 /* MakeJobs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MakeJobs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		317B9BE11EC69EF800F24216 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		317B9BE31EC69EF800F24216 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -30,7 +34,7 @@
 		317B9BEB1EC69EF800F24216 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		317B9BEE1EC69EF800F24216 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		317B9BF01EC69EF800F24216 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		317B9BF61EC6A79200F24216 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		317B9BF61EC6A79200F24216 /* KeyBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyBoard.swift; sourceTree = "<group>"; };
 		317B9BF91EC6BDE000F24216 /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		317B9BFC1EC6D2B300F24216 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		317B9BFE1EC6E01E00F24216 /* PostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostVC.swift; sourceTree = "<group>"; };
@@ -98,7 +102,9 @@
 		317B9BF81EC6A79900F24216 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				317B9BF61EC6A79200F24216 /* File.swift */,
+				317B9BF61EC6A79200F24216 /* KeyBoard.swift */,
+				3102BDD51EC7666C0097DA91 /* DataService.swift */,
+				3102BDD71EC771850097DA91 /* User.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -249,8 +255,10 @@
 			files = (
 				317B9BFD1EC6D2B300F24216 /* FeedVC.swift in Sources */,
 				317B9BEA1EC69EF800F24216 /* MakeJobs.xcdatamodeld in Sources */,
-				317B9BF71EC6A79200F24216 /* File.swift in Sources */,
+				317B9BF71EC6A79200F24216 /* KeyBoard.swift in Sources */,
+				3102BDD61EC7666C0097DA91 /* DataService.swift in Sources */,
 				317B9BE41EC69EF800F24216 /* SignInVC.swift in Sources */,
+				3102BDD81EC771850097DA91 /* User.swift in Sources */,
 				317B9BFF1EC6E01E00F24216 /* PostVC.swift in Sources */,
 				317B9BFA1EC6BDE000F24216 /* SignUpVC.swift in Sources */,
 				317B9BE21EC69EF800F24216 /* AppDelegate.swift in Sources */,
