@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SignInVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +21,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func signUpPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "signUpPressed", sender: nil)
+    }
 
 }
 
