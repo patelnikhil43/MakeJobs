@@ -13,6 +13,7 @@
 		317B9BEA1EC69EF800F24216 /* MakeJobs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 317B9BE81EC69EF800F24216 /* MakeJobs.xcdatamodeld */; };
 		317B9BEC1EC69EF800F24216 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 317B9BEB1EC69EF800F24216 /* Assets.xcassets */; };
 		317B9BEF1EC69EF800F24216 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 317B9BED1EC69EF800F24216 /* LaunchScreen.storyboard */; };
+		317B9BF71EC6A79200F24216 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317B9BF61EC6A79200F24216 /* File.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		317B9BEB1EC69EF800F24216 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		317B9BEE1EC69EF800F24216 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		317B9BF01EC69EF800F24216 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		317B9BF61EC6A79200F24216 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		317B9BE01EC69EF800F24216 /* MakeJobs */ = {
 			isa = PBXGroup;
 			children = (
+				317B9BF81EC6A79900F24216 /* Extensions */,
 				317B9BE11EC69EF800F24216 /* AppDelegate.swift */,
 				317B9BE31EC69EF800F24216 /* ViewController.swift */,
 				317B9BE51EC69EF800F24216 /* Main.storyboard */,
@@ -65,6 +68,14 @@
 				317B9BE81EC69EF800F24216 /* MakeJobs.xcdatamodeld */,
 			);
 			path = MakeJobs;
+			sourceTree = "<group>";
+		};
+		317B9BF81EC6A79900F24216 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				317B9BF61EC6A79200F24216 /* File.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				317B9BEA1EC69EF800F24216 /* MakeJobs.xcdatamodeld in Sources */,
+				317B9BF71EC6A79200F24216 /* File.swift in Sources */,
 				317B9BE41EC69EF800F24216 /* ViewController.swift in Sources */,
 				317B9BE21EC69EF800F24216 /* AppDelegate.swift in Sources */,
 			);
