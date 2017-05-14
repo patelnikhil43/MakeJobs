@@ -60,7 +60,7 @@ class SignUpVC: UIViewController {
                         guard let uid = user?.uid else{
                             return
                         }
-                        let values  = ["name:" : name, "email" : email]
+                        let values  = ["name" : name, "email" : email]
                         self.registerUserIntoDatabaseWithUID(uid: uid, values: values as [String: AnyObject])
                          ////Going to Register User into Database
                     }//End of Else

@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		3102BDD61EC7666C0097DA91 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3102BDD51EC7666C0097DA91 /* DataService.swift */; };
 		3102BDD81EC771850097DA91 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3102BDD71EC771850097DA91 /* User.swift */; };
+		3102BDDA1EC7772F0097DA91 /* PostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3102BDD91EC7772F0097DA91 /* PostVC.swift */; };
+		3102BDDC1EC78E950097DA91 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3102BDDB1EC78E940097DA91 /* FeedCell.swift */; };
+		3102BDDE1EC7D5D00097DA91 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3102BDDD1EC7D5D00097DA91 /* TabBarVC.swift */; };
+		3102BDE01EC7ED330097DA91 /* RowSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3102BDDF1EC7ED330097DA91 /* RowSelectVC.swift */; };
 		317B9BE21EC69EF800F24216 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317B9BE11EC69EF800F24216 /* AppDelegate.swift */; };
 		317B9BE41EC69EF800F24216 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317B9BE31EC69EF800F24216 /* SignInVC.swift */; };
 		317B9BE71EC69EF800F24216 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 317B9BE51EC69EF800F24216 /* Main.storyboard */; };
@@ -18,7 +22,6 @@
 		317B9BF71EC6A79200F24216 /* KeyBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317B9BF61EC6A79200F24216 /* KeyBoard.swift */; };
 		317B9BFA1EC6BDE000F24216 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317B9BF91EC6BDE000F24216 /* SignUpVC.swift */; };
 		317B9BFD1EC6D2B300F24216 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317B9BFC1EC6D2B300F24216 /* FeedVC.swift */; };
-		317B9BFF1EC6E01E00F24216 /* PostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317B9BFE1EC6E01E00F24216 /* PostVC.swift */; };
 		317B9C011EC7614A00F24216 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 317B9C001EC7614A00F24216 /* GoogleService-Info.plist */; };
 		6F6346508B62DE95620A1D7D /* Pods_MakeJobs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE69EB3CD021B29007199AE1 /* Pods_MakeJobs.framework */; };
 /* End PBXBuildFile section */
@@ -26,6 +29,10 @@
 /* Begin PBXFileReference section */
 		3102BDD51EC7666C0097DA91 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		3102BDD71EC771850097DA91 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		3102BDD91EC7772F0097DA91 /* PostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostVC.swift; sourceTree = "<group>"; };
+		3102BDDB1EC78E940097DA91 /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		3102BDDD1EC7D5D00097DA91 /* TabBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
+		3102BDDF1EC7ED330097DA91 /* RowSelectVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowSelectVC.swift; sourceTree = "<group>"; };
 		317B9BDE1EC69EF800F24216 /* MakeJobs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MakeJobs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		317B9BE11EC69EF800F24216 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		317B9BE31EC69EF800F24216 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -37,7 +44,6 @@
 		317B9BF61EC6A79200F24216 /* KeyBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyBoard.swift; sourceTree = "<group>"; };
 		317B9BF91EC6BDE000F24216 /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		317B9BFC1EC6D2B300F24216 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
-		317B9BFE1EC6E01E00F24216 /* PostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostVC.swift; sourceTree = "<group>"; };
 		317B9C001EC7614A00F24216 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4181C612292FA6F4ADB45F90 /* Pods-MakeJobs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MakeJobs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MakeJobs/Pods-MakeJobs.debug.xcconfig"; sourceTree = "<group>"; };
 		AE69EB3CD021B29007199AE1 /* Pods_MakeJobs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MakeJobs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +111,7 @@
 				317B9BF61EC6A79200F24216 /* KeyBoard.swift */,
 				3102BDD51EC7666C0097DA91 /* DataService.swift */,
 				3102BDD71EC771850097DA91 /* User.swift */,
+				3102BDDB1EC78E940097DA91 /* FeedCell.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -115,7 +122,9 @@
 				317B9BF91EC6BDE000F24216 /* SignUpVC.swift */,
 				317B9BE31EC69EF800F24216 /* SignInVC.swift */,
 				317B9BFC1EC6D2B300F24216 /* FeedVC.swift */,
-				317B9BFE1EC6E01E00F24216 /* PostVC.swift */,
+				3102BDD91EC7772F0097DA91 /* PostVC.swift */,
+				3102BDDD1EC7D5D00097DA91 /* TabBarVC.swift */,
+				3102BDDF1EC7ED330097DA91 /* RowSelectVC.swift */,
 			);
 			name = VCs;
 			sourceTree = "<group>";
@@ -254,12 +263,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				317B9BFD1EC6D2B300F24216 /* FeedVC.swift in Sources */,
+				3102BDE01EC7ED330097DA91 /* RowSelectVC.swift in Sources */,
+				3102BDDC1EC78E950097DA91 /* FeedCell.swift in Sources */,
 				317B9BEA1EC69EF800F24216 /* MakeJobs.xcdatamodeld in Sources */,
 				317B9BF71EC6A79200F24216 /* KeyBoard.swift in Sources */,
 				3102BDD61EC7666C0097DA91 /* DataService.swift in Sources */,
 				317B9BE41EC69EF800F24216 /* SignInVC.swift in Sources */,
 				3102BDD81EC771850097DA91 /* User.swift in Sources */,
-				317B9BFF1EC6E01E00F24216 /* PostVC.swift in Sources */,
+				3102BDDA1EC7772F0097DA91 /* PostVC.swift in Sources */,
+				3102BDDE1EC7D5D00097DA91 /* TabBarVC.swift in Sources */,
 				317B9BFA1EC6BDE000F24216 /* SignUpVC.swift in Sources */,
 				317B9BE21EC69EF800F24216 /* AppDelegate.swift in Sources */,
 			);

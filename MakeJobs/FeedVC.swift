@@ -8,30 +8,141 @@
 
 import UIKit
 import Firebase
+import CoreLocation
 
-class FeedVC: UIViewController,  UITableViewDelegate, UITableViewDataSource {
+class FeedVC: UIViewController,  UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
+
 
     @IBOutlet weak var tableViewBoard: UITableView!
     
+    //Number of Posts in Array
+    var posts = NSMutableArray()
+    
     override func viewWillAppear(_ animated: Bool) {
-      tableViewBoard.delegate = self
+        tableViewBoard.delegate = self
         tableViewBoard.dataSource = self
+        posts.removeAllObjects()
+        loadData()
+        
+        //Get current Location
+        determineMyCurrentLocation()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
     }
 
+    //Location
+    var locationManager: CLLocationManager!
+
+    func determineMyCurrentLocation(){
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        
+        //If The Location Is enabled Then it asks for location
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.startUpdatingLocation()
+            //locationManager.startUpdatingHeading()
+        }else{
+            locationManager.requestAlwaysAuthorization()
+        }
+    }
+    
+    var Currentlatitude:Double?
+    var Currentlongitude: Double?
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let userLocation:CLLocation = locations[0] as CLLocation
+        manager.stopUpdatingLocation()
+        Currentlatitude  = userLocation.coordinate.latitude
+        Currentlongitude = userLocation.coordinate.longitude
+    }
+    //If there is an error while updating location
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
+    {
+        print("Error \(error.localizedDescription)")
+    }
+    
+    //End of Location
+    
+    //Loads The Posts from Firebase
+    func loadData(){
+        FIRDatabase.database().reference().child("Posts").observeSingleEvent(of: .value, with: { (snapshot) in
+            print(snapshot)
+            if let postDictionary = snapshot.value as? [String: AnyObject]{
+                for post in postDictionary {
+                    self.posts.add(post.value)                    // Basically adds all the values in snapshot to array posts using for loop
+                }
+                
+                self.tableViewBoard.reloadData()
+            }//End of postDictionary
+        })//End of FireBase Database
+    }//End of LoadData Function
+    
+    
     
     //TableView Starts
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+
+        return self.posts.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+       let cell = tableView.dequeueReusableCell(withIdentifier: "postcell", for: indexPath) as! FeedCell
+          let post = self.posts[indexPath.row] as! [String: AnyObject]
+        
+        cell.descriptionLabel.text = post["description"] as? String
+        cell.title.text = post["title"] as? String
+        cell.cityLabel.text = post["city"] as? String
+        
+        //Distance
+         let  currentUserCoordinate = CLLocation(latitude: Currentlatitude!, longitude: Currentlongitude!)
+         let otherUserCoordinate = CLLocation(latitude: Double((post["latitude"] as? String)!)!, longitude: Double((post["longitude"] as? String)!)!)
+         let distanceInMeters  = currentUserCoordinate.distance(from: otherUserCoordinate)
+       let miles  = String(format: "%.2f", distanceInMeters * 0.000621371)
+        
+        cell.milesAwayLabel.text  = "\(miles) Miles Away"
+        //End of Distance
+
+        //Color
+         let swiftColor = UIColor(red: 91/255, green: 182/255, blue: 183/255, alpha: 1)
+        let swiftColor2  = UIColor(red: 94/255, green: 126/255, blue: 168/255, alpha: 1)
+        if ( indexPath.row % 2 == 0 ){
+        cell.backgroundColor = swiftColor
+        }
+        else{
+        cell.backgroundColor = swiftColor2
+        }
+        //End of Color
+
+        return cell
+    }
+    
+    //Did Select Row 
+    var postTitle: String?
+    var postDescription: String?
+
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let post = self.posts[indexPath.row] as! [String: AnyObject]
+
+        postTitle = post["title"] as? String
+        performSegue(withIdentifier: "rowClicked", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "rowClicked"){
+            let vc = segue.destination as! RowSelectVC
+            print(postTitle)
+            vc.titleLabel.text = postTitle!
+        }
+        
     }
 
 }
