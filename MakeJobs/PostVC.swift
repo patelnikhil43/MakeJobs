@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 import CoreLocation
-class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate  {
+class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate,  UITextFieldDelegate  {
 
     @IBOutlet weak var jobTitleField: UITextField!
     @IBOutlet weak var descriptionField: UITextView!
@@ -70,9 +70,10 @@ class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         postButton.layer.borderWidth = 1.0
         postButton.layer.borderColor = UIColor(white: 1.0, alpha: borderAlpha).cgColor
         
-        
+        phoneField.delegate = self
     }
-
+    
+    //Post Button Pressed
      var imageFileName = ""
     @IBAction func postButtonPressed(_ sender: Any) {
         if selectedPicture.image != nil {
@@ -246,5 +247,13 @@ class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     }
 
 
+    
+    //Max Length for Phone Field
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let limitLength:Int = 10
+        guard let text = textField.text else { return true }
+        let newLength = text.characters.count + string.characters.count - range.length
+        return newLength <= limitLength
+    }
 
 }

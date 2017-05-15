@@ -143,6 +143,8 @@ class FeedVC: UIViewController,  UITableViewDelegate, UITableViewDataSource, CLL
     var postMoney: String?
     var postEmail: String?
     var someMiles = [String]()
+    var postPhone: String?
+    var postImageName: String?
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
@@ -155,6 +157,8 @@ class FeedVC: UIViewController,  UITableViewDelegate, UITableViewDataSource, CLL
         postMiles = someMiles[indexPath.row]
         postMoney = post["money"] as? String
         postEmail = post["email"] as? String
+        postPhone = post["phone"] as? String
+        postImageName = post["image"] as? String
         performSegue(withIdentifier: "rowClicked", sender: self)
     }
     
@@ -168,6 +172,8 @@ class FeedVC: UIViewController,  UITableViewDelegate, UITableViewDataSource, CLL
             vc.milesAwayLabel = postMiles
             vc.moneyLabel = postMoney
             vc.emailLabel = postEmail
+            vc.phoneLabel = postPhone
+            vc.imageName = postImageName
         }
         
     }

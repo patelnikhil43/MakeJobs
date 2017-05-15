@@ -220,6 +220,14 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="abc_video_bg" translatesAutoresizingMaskIntoConstraints="NO" id="nZo-H1-kQ8">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                             </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1dZ-Mi-hGm">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Gle-b1-olB">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
                             <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Wt-w3-DZk">
                                 <rect key="frame" x="40" y="220" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -445,12 +453,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="C8r-Al-1Ge" firstAttribute="leading" secondItem="Akc-DN-UoY" secondAttribute="leading" id="2c6-58-Ls2"/>
+                            <constraint firstItem="cOd-Ms-OyA" firstAttribute="top" secondItem="1dZ-Mi-hGm" secondAttribute="bottom" id="67E-rC-Nq0"/>
+                            <constraint firstAttribute="trailing" secondItem="1dZ-Mi-hGm" secondAttribute="trailing" id="7Js-Za-j4S"/>
                             <constraint firstAttribute="trailing" secondItem="TC9-Ty-u4X" secondAttribute="trailing" constant="10" id="8WY-3y-fEg"/>
                             <constraint firstItem="nZo-H1-kQ8" firstAttribute="leading" secondItem="Akc-DN-UoY" secondAttribute="leading" id="9F3-5C-X0y"/>
                             <constraint firstItem="d5a-uO-HKx" firstAttribute="top" secondItem="RkS-vQ-YnH" secondAttribute="bottom" id="Bkh-7A-3sy"/>
                             <constraint firstItem="Apb-OR-rNA" firstAttribute="centerX" secondItem="Akc-DN-UoY" secondAttribute="centerX" id="Cwb-13-zXs"/>
                             <constraint firstItem="cOd-Ms-OyA" firstAttribute="top" secondItem="nZo-H1-kQ8" secondAttribute="bottom" id="DdV-uc-Zcs"/>
                             <constraint firstItem="d5a-uO-HKx" firstAttribute="trailing" secondItem="C8r-Al-1Ge" secondAttribute="trailing" id="FZ2-pQ-jZp"/>
+                            <constraint firstItem="1dZ-Mi-hGm" firstAttribute="leading" secondItem="Akc-DN-UoY" secondAttribute="leading" id="Ldd-60-f0D"/>
                             <constraint firstAttribute="trailing" secondItem="nZo-H1-kQ8" secondAttribute="trailing" id="Oov-Ec-39V"/>
                             <constraint firstItem="d5a-uO-HKx" firstAttribute="leading" secondItem="C8r-Al-1Ge" secondAttribute="leading" id="UDD-I8-AlQ"/>
                             <constraint firstItem="Apb-OR-rNA" firstAttribute="top" secondItem="TC9-Ty-u4X" secondAttribute="bottom" constant="8" id="XZx-b0-H9o"/>
@@ -459,6 +470,7 @@
                             <constraint firstItem="TC9-Ty-u4X" firstAttribute="top" secondItem="d5a-uO-HKx" secondAttribute="bottom" constant="10" id="h5M-Jf-kJx"/>
                             <constraint firstItem="TC9-Ty-u4X" firstAttribute="leading" secondItem="Akc-DN-UoY" secondAttribute="leading" constant="10" id="nha-fD-IXC"/>
                             <constraint firstItem="nZo-H1-kQ8" firstAttribute="top" secondItem="Akc-DN-UoY" secondAttribute="top" id="oAr-x3-L3W"/>
+                            <constraint firstItem="1dZ-Mi-hGm" firstAttribute="top" secondItem="Akc-DN-UoY" secondAttribute="top" id="wbN-sR-Fu8"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Post" image="baredit" selectedImage="baredit-2" id="aLh-r1-KiG">
@@ -482,7 +494,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QY3-09-Bjz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-161.25" y="-808.09859154929575"/>
+            <point key="canvasLocation" x="-162.31884057971016" y="-808.69565217391312"/>
         </scene>
         <!--Row SelectVC-->
         <scene sceneID="xXg-YJ-ih3">
@@ -604,6 +616,9 @@
                                                             <constraint firstAttribute="width" constant="64" id="6mU-hB-cE7"/>
                                                         </constraints>
                                                         <state key="normal" image="GreenImage"/>
+                                                        <connections>
+                                                            <action selector="imagePressed:" destination="2Ep-7l-7hM" eventType="touchUpInside" id="N3G-L5-hQO"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -622,6 +637,9 @@
                                                             <constraint firstAttribute="height" constant="64" id="b6I-Ci-fQf"/>
                                                         </constraints>
                                                         <state key="normal" image="GreenPhone"/>
+                                                        <connections>
+                                                            <action selector="callButton:" destination="2Ep-7l-7hM" eventType="touchUpInside" id="N08-Np-cd0"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -667,6 +685,9 @@
                                                 <state key="normal" title="Email@Email.com">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="emailPressed:" destination="2Ep-7l-7hM" eventType="touchUpInside" id="8tK-8O-8dw"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.21568627450980393" green="0.58823529411764708" blue="0.72941176470588232" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -719,11 +740,76 @@
                         <outlet property="labelForTitle" destination="qrD-GI-O9z" id="Z8X-BN-oW1"/>
                         <outlet property="moneyView" destination="9w6-aa-2xv" id="t3x-Lw-v2r"/>
                         <outlet property="phoneView" destination="vvC-ZN-xzf" id="22c-C1-BMb"/>
+                        <segue destination="Ie6-um-AsS" kind="show" identifier="imagePressed" id="hSZ-bY-eab"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rSk-9v-mcC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="659.4202898550725" y="-913.85869565217399"/>
+        </scene>
+        <!--ImageVC-->
+        <scene sceneID="zF0-9j-hie">
+            <objects>
+                <viewController id="Ie6-um-AsS" customClass="ImageVC" customModule="MakeJobs" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vIp-Rn-Huy"/>
+                        <viewControllerLayoutGuide type="bottom" id="7Lp-cP-3tx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gLS-d4-qgE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bRZ-dp-hLq">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="uMc-9M-u0K">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ym5-KM-Ub5">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="665"/>
+                                        </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j1N-eg-SJW">
+                                            <rect key="frame" x="175" y="670" width="64" height="64"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="64" id="Ktw-zE-QoZ"/>
+                                                <constraint firstAttribute="width" constant="64" id="b4u-Zy-yqq"/>
+                                            </constraints>
+                                            <state key="normal" image="cancel"/>
+                                            <connections>
+                                                <action selector="closePressed:" destination="Ie6-um-AsS" eventType="touchUpInside" id="rhP-Fc-vin"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="j1N-eg-SJW" firstAttribute="top" secondItem="ym5-KM-Ub5" secondAttribute="bottom" constant="5" id="6KK-ba-gR1"/>
+                                        <constraint firstAttribute="bottom" secondItem="j1N-eg-SJW" secondAttribute="bottom" constant="2" id="C5k-9a-F5R"/>
+                                        <constraint firstItem="j1N-eg-SJW" firstAttribute="centerX" secondItem="uMc-9M-u0K" secondAttribute="centerX" id="E9d-bV-puz"/>
+                                        <constraint firstItem="ym5-KM-Ub5" firstAttribute="leading" secondItem="uMc-9M-u0K" secondAttribute="leading" id="Izj-w5-M4h"/>
+                                        <constraint firstAttribute="trailing" secondItem="ym5-KM-Ub5" secondAttribute="trailing" id="gwb-2W-8df"/>
+                                        <constraint firstItem="ym5-KM-Ub5" firstAttribute="top" secondItem="uMc-9M-u0K" secondAttribute="top" id="mA5-AP-ZYd"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.2156862745" green="0.58823529409999997" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bRZ-dp-hLq" firstAttribute="top" secondItem="vIp-Rn-Huy" secondAttribute="bottom" id="0XV-TP-RyF"/>
+                            <constraint firstAttribute="trailing" secondItem="bRZ-dp-hLq" secondAttribute="trailing" id="46y-lP-dNG"/>
+                            <constraint firstItem="7Lp-cP-3tx" firstAttribute="top" secondItem="bRZ-dp-hLq" secondAttribute="bottom" id="k3j-0W-B67"/>
+                            <constraint firstItem="bRZ-dp-hLq" firstAttribute="leading" secondItem="gLS-d4-qgE" secondAttribute="leading" id="vFJ-JD-i4s"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="postedImageView" destination="ym5-KM-Ub5" id="4vX-Js-xjB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qgi-e1-srj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1432" y="-914"/>
         </scene>
         <!--Sign InVC-->
         <scene sceneID="tne-QT-ifu">
