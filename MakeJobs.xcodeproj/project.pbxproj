@@ -13,6 +13,7 @@
 		3102BDDC1EC78E950097DA91 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3102BDDB1EC78E940097DA91 /* FeedCell.swift */; };
 		3102BDDE1EC7D5D00097DA91 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3102BDDD1EC7D5D00097DA91 /* TabBarVC.swift */; };
 		3102BDE01EC7ED330097DA91 /* RowSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3102BDDF1EC7ED330097DA91 /* RowSelectVC.swift */; };
+		3102BDE21EC9575F0097DA91 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3102BDE11EC9575F0097DA91 /* MessageUI.framework */; };
 		317B9BE21EC69EF800F24216 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317B9BE11EC69EF800F24216 /* AppDelegate.swift */; };
 		317B9BE41EC69EF800F24216 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317B9BE31EC69EF800F24216 /* SignInVC.swift */; };
 		317B9BE71EC69EF800F24216 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 317B9BE51EC69EF800F24216 /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 		3102BDDB1EC78E940097DA91 /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		3102BDDD1EC7D5D00097DA91 /* TabBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		3102BDDF1EC7ED330097DA91 /* RowSelectVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowSelectVC.swift; sourceTree = "<group>"; };
+		3102BDE11EC9575F0097DA91 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		317B9BDE1EC69EF800F24216 /* MakeJobs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MakeJobs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		317B9BE11EC69EF800F24216 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		317B9BE31EC69EF800F24216 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3102BDE21EC9575F0097DA91 /* MessageUI.framework in Frameworks */,
 				6F6346508B62DE95620A1D7D /* Pods_MakeJobs.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,6 +135,7 @@
 		623066C6BA8185248BB42FD2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3102BDE11EC9575F0097DA91 /* MessageUI.framework */,
 				AE69EB3CD021B29007199AE1 /* Pods_MakeJobs.framework */,
 			);
 			name = Frameworks;
@@ -401,6 +405,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8AEAWST845;
 				INFOPLIST_FILE = MakeJobs/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.theboss.makejobs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -415,6 +420,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8AEAWST845;
 				INFOPLIST_FILE = MakeJobs/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.theboss.makejobs;
 				PRODUCT_NAME = "$(TARGET_NAME)";

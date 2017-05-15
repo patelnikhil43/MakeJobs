@@ -18,6 +18,7 @@ class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     @IBOutlet weak var phoneField: UITextField!
     @IBOutlet weak var dollarField: UITextField!
     @IBOutlet weak var differentImage: UIButton!
+    @IBOutlet weak var postButton: UIButton!
     
     //Location
     var locationManager: CLLocationManager!
@@ -62,6 +63,14 @@ class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         differentImage.isHidden = true
         // Do any additional setup after loading the view.
         determineMyCurrentLocation()
+        self.hideKeyboardWhenTappedAround()
+        
+        let borderAlpha : CGFloat = 0.7
+        postButton.backgroundColor = UIColor.clear
+        postButton.layer.borderWidth = 1.0
+        postButton.layer.borderColor = UIColor(white: 1.0, alpha: borderAlpha).cgColor
+        
+        
     }
 
      var imageFileName = ""
@@ -101,7 +110,7 @@ class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                          print("In The Process of Setting name, uid, description text, and imageName")
                         if (name != nil) && (email != nil) {
                             print("Name & Email")
-                            if let uid  = FIRAuth.auth()?.currentUser?.uid{
+                            if let uid  = (FIRAuth.auth()?.currentUser?.uid){
                                 print("Uid ")
                                 if let title = self.jobTitleField.text{
                                     print("title")
@@ -126,7 +135,8 @@ class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                                                         "money": money,
                                                         "image" : self.imageFileName,
                                                         "latitude": String(describing: self.latitude!),
-                                                        "longitude": String(describing: self.longitude!)
+                                                        "longitude": String(describing: self.longitude!),
+                                                        "email" : email!
                                                         ]
                                                          //This Line sets all these values into "Posts" Folder by generating an automatic string
                                                         FIRDatabase.database().reference().child("Posts").childByAutoId().setValue(postObject)
