@@ -67,7 +67,7 @@ class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         
         let borderAlpha : CGFloat = 0.7
         postButton.backgroundColor = UIColor.clear
-        postButton.layer.borderWidth = 1.0
+        postButton.layer.borderWidth = 3.0
         postButton.layer.borderColor = UIColor(white: 1.0, alpha: borderAlpha).cgColor
         
         phoneField.delegate = self
@@ -98,42 +98,39 @@ class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                     
                     //Getting All the SnapShot Details into Dictionary
                     if let dicionary = snapshot.value as? [String: AnyObject] {
-                        
                         //Setting the user's name to let name
                         let name = dicionary["name"] as! String?
                         let email = dicionary["email"] as! String?
                         print("Image In Process Of Uploading")
-                        self.imageFileName = "\(randomName as String).jpg"
+                            self.imageFileName = "\(randomName as String).jpg"
                         print("Image FileName is SET to some Random String")
-                        print(self.imageFileName)
-                        print(name)
-                        print(email)
                          print("In The Process of Setting name, uid, description text, and imageName")
-                        if (name != nil) && (email != nil) {
+                                if (name != nil) && (email != nil) {
                             print("Name & Email")
                             if let uid  = (FIRAuth.auth()?.currentUser?.uid){
                                 print("Uid ")
-                                if let title = self.jobTitleField.text{
+                                    if  (self.jobTitleField.text != ""){
                                     print("title")
-                                    if let description = self.descriptionField.text{
+                                    if self.descriptionField.text != ""{
                                         print("description")
-                                        if let cityState = self.cityStateField.text {
+                                        if self.cityStateField.text != ""{
                                             print("city")
-                                            if let phone = self.phoneField.text {
+                                            if self.phoneField.text != ""{
+                                                if self.phoneField.text?.characters.count == 10 {
                                                 print("phone")
-                                                if let money = self.dollarField.text{
+                                                if self.dollarField.text != ""{
                                                     print("Money")
                                                     if self.imageFileName != "" {
                                                         print("image name")
                                                         if (self.latitude != nil) && (self.longitude != nil){
                                                             print("longitude and latitude exist")
                                                         let postObject: Dictionary<String, Any> = [
-                                                        "title" : title,
+                                                        "title" : self.jobTitleField.text!,
                                                         "uid" : uid,
-                                                        "description" : description,
-                                                        "city" : cityState,
-                                                        "phone": phone,
-                                                        "money": money,
+                                                        "description" : self.descriptionField.text!,
+                                                        "city" : self.cityStateField.text!,
+                                                        "phone": self.phoneField.text!,
+                                                        "money": self.dollarField.text!,
                                                         "image" : self.imageFileName,
                                                         "latitude": String(describing: self.latitude!),
                                                         "longitude": String(describing: self.longitude!),
@@ -155,10 +152,28 @@ class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                                                         }//End of Checking longitude and latitude
                                                         }// End of Checking image name Exist
                                                 }//End of checking Money Field
+                                                else{
+                                                    self.alertCall(title: "Empty Amount Field", message: "Enter a number of amount you will pay.")
+                                                }
+                                                }else{
+                                                    self.alertCall(title: "Enter a Valid Phone Number", message: "Phone Number should be 10 digits")
+                                                }
                                             }//End of Checking Phone Field
+                                            else {
+                                                self.alertCall(title: "Empty Phone Field", message: "Enter your phone number")
+                                            }
                                         }//End of Checking City Field
+                                        else{
+                                            self.alertCall(title: "Empty City/State Field", message: "Enter City & State")
+                                        }
                                     }//End of Checking Desciption Field
+                                    else {
+                                            self.alertCall(title: "Empty Description", message: "Enter Job Description")
+                                        }
                                 }//End of Checking if title Exits
+                                else{
+                                    self.alertCall(title: "Enter Job Title", message: "Job Title field is emtpy.")
+                                }
                             }//End of Checking if UID Exist
                             
                         }// End of Checking if name and email exist

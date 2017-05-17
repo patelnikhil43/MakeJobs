@@ -12,10 +12,11 @@ import FirebaseDatabase
 import KeychainSwift
 
 
-class SignInVC: UIViewController {
+class SignInVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var signupButton: Bounce!
     
     override func viewDidAppear(_ animated: Bool) {
         let keyChain = DataSerivce().keyChain
@@ -25,7 +26,10 @@ class SignInVC: UIViewController {
             print("This is the uid of the user \(user.uid!)")
             performSegue(withIdentifier: "loginSuccess", sender: nil)
         }
+      
     }
+    
+    
     
     func completeSignIn(id: String){
         let key = DataSerivce().keyChain
@@ -36,21 +40,55 @@ class SignInVC: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.hideKeyboardWhenTappedAround()
+        passwordField.delegate = self
+        emailField.delegate = self
+        
+        let borderAlpha : CGFloat = 0.7
+        signupButton.backgroundColor = UIColor.clear
+        signupButton.layer.borderWidth = 3.0
+        signupButton.layer.borderColor = UIColor(white: 1.0, alpha: borderAlpha).cgColor
 
+        UIApplication.shared.isStatusBarHidden = false
     }
 
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()  //if desired
+        performAction()
+        return true
+    }
+    
+    
     @IBAction func signInPressed(_ sender: Any) {
-        if let email = emailField.text , let password = passwordField.text {
+        performAction()
+           }
+ 
+    func performAction(){
+     if let email = emailField.text , let password = passwordField.text {
             FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
                 if error == nil {               //if there is no error
                     self.completeSignIn(id: user!.uid)
                     print("Signed IN")
+                    self.emailField.text = ""
+                    self.passwordField.text = ""
                     self.performSegue(withIdentifier: "loginSuccess", sender: nil)
-                }
-            })
-        }
+                }else{
+                    print(error!.localizedDescription)
+                    self.alertCall(title: "Invalid Credentials", message: "\(error!.localizedDescription)")
+                }//End of else
+            }) // End of Firbase Auth
+        }//End of if check for email & pass
+    }//End of Perform Action function
+    
+    func alertCall(title: String, message: String) {
+        // create the alert
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        //Add an action aka Button
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+        //Present the alert
+        self.present(alert, animated: true, completion: nil)
     }
- 
 
     @IBAction func signUpPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)

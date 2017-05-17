@@ -5,14 +5,13 @@
 //  Created by Nikhil on 5/13/17.
 //  Copyright © 2017 Nikhil. All rights reserved.
 //
-
 import UIKit
 import Firebase
 import CoreLocation
 
 class FeedVC: UIViewController,  UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
-
-
+    
+    
     @IBOutlet weak var tableViewBoard: UITableView!
     
     //Number of Posts in Array
@@ -29,20 +28,11 @@ class FeedVC: UIViewController,  UITableViewDelegate, UITableViewDataSource, CLL
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-//        let firebaseAuth = FIRAuth.auth()
-//        do{
-//            try firebaseAuth?.signOut()
-//        } catch let signOutError as NSError{
-//            print("Sign Out error: %@", signOutError )
-//        }
-//        DataSerivce().keyChain.delete("uid")
-//        dismiss(animated: true, completion: nil)
     }
-
+    
     //Location
     var locationManager: CLLocationManager!
-
+    
     func determineMyCurrentLocation(){
         locationManager = CLLocationManager()
         locationManager.delegate = self
@@ -96,46 +86,48 @@ class FeedVC: UIViewController,  UITableViewDelegate, UITableViewDataSource, CLL
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
+        
         return self.posts.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       let cell = tableView.dequeueReusableCell(withIdentifier: "postcell", for: indexPath) as! FeedCell
-          let post = self.posts[indexPath.row] as! [String: AnyObject]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "postcell", for: indexPath) as! FeedCell
+        let post = self.posts[indexPath.row] as! [String: AnyObject]
         
         cell.descriptionLabel.text = post["description"] as? String
         cell.title.text = post["title"] as? String
         cell.cityLabel.text = post["city"] as? String
+        cell.moneyLabel.text  = "$\(post["money"] as! String)"
         
         if (Currentlatitude != nil) && (Currentlongitude != nil ){
-        //Distance
-         let  currentUserCoordinate = CLLocation(latitude: Currentlatitude!, longitude: Currentlongitude!)
-         let otherUserCoordinate = CLLocation(latitude: Double((post["latitude"] as? String)!)!, longitude: Double((post["longitude"] as? String)!)!)
-         let distanceInMeters  = currentUserCoordinate.distance(from: otherUserCoordinate)
-       let miles  = String(format: "%.2f", distanceInMeters * 0.000621371)
-        
-        cell.milesAwayLabel.text  = "\(miles) Miles Away"
+            //Distance
+            let  currentUserCoordinate = CLLocation(latitude: Currentlatitude!, longitude: Currentlongitude!)
+            let otherUserCoordinate = CLLocation(latitude: Double((post["latitude"] as? String)!)!, longitude: Double((post["longitude"] as? String)!)!)
+            let distanceInMeters  = currentUserCoordinate.distance(from: otherUserCoordinate)
+            let miles  = String(format: "%.2f", distanceInMeters * 0.000621371)
+            
+            cell.milesAwayLabel.text  = "\(miles) Miles Away"
             someMiles.append("\(miles)")
-        //End of Distance
+            //End of Distance
         } else{
             determineMyCurrentLocation()
         }
+      
         //Color
-         let swiftColor = UIColor(red: 91/255, green: 182/255, blue: 183/255, alpha: 1)
-        let swiftColor2  = UIColor(red: 94/255, green: 126/255, blue: 168/255, alpha: 1)
+        let swiftColor = UIColor(red: 63/255, green: 133/255, blue: 145/255, alpha: 0.5)
+        let swiftColor2  = UIColor(red: 94/255, green: 126/255, blue: 168/255, alpha: 0.5)
         if ( indexPath.row % 2 == 0 ){
-        cell.backgroundColor = swiftColor
+            cell.backgroundColor = swiftColor
+            
         }
         else{
-        cell.backgroundColor = swiftColor2
+            cell.backgroundColor = swiftColor2
         }
         //End of Color
-
         
         return cell
     }
     
-    //Did Select Row 
+    //Did Select Row
     var postTitle: String?
     var postDescription: String?
     var postCity: String?
@@ -147,10 +139,10 @@ class FeedVC: UIViewController,  UITableViewDelegate, UITableViewDataSource, CLL
     var postImageName: String?
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        
         
         let post = self.posts[indexPath.row] as! [String: AnyObject]
-
+        
         postTitle = post["title"] as? String
         postDescription = post["description"] as? String
         postCity = post["city"] as? String
@@ -177,5 +169,5 @@ class FeedVC: UIViewController,  UITableViewDelegate, UITableViewDataSource, CLL
         }
         
     }
-
+    
 }

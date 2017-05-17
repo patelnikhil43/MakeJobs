@@ -14,6 +14,7 @@ class FeedCell: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var milesAwayLabel: UILabel!
+    @IBOutlet weak var moneyLabel: UILabel!
 
     
     

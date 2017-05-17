@@ -16,12 +16,19 @@ class SignUpVC: UIViewController {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passworrdField: UITextField!
     @IBOutlet weak var confirmPassword: UITextField!
+    @IBOutlet weak var signUpButton: UIButton!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view.
+        
+        let borderAlpha : CGFloat = 0.7
+        signUpButton.backgroundColor = UIColor.clear
+        signUpButton.layer.borderWidth = 3.0
+        signUpButton.layer.borderColor = UIColor(white: 1.0, alpha: borderAlpha).cgColor
+
         
     }
     
@@ -48,7 +55,7 @@ class SignUpVC: UIViewController {
 
     @IBAction func letsGoPressed(_ sender: Any) {
         
-        if (nameField.text != nil) && (emailField.text != nil) && (passworrdField.text !=  nil) && (confirmPassword.text != nil) {
+        if (nameField.text != "") && (emailField.text != "") && (passworrdField.text !=  "") && (confirmPassword.text != "") {
             if (confirmPassword.text == passworrdField.text){
                 let name = nameField.text
                 let email = emailField.text
@@ -56,6 +63,7 @@ class SignUpVC: UIViewController {
                 FIRAuth.auth()?.createUser(withEmail: email!, password: password!, completion: { (user, error) in
                     if error != nil {
                         print(error!.localizedDescription)
+                        self.alertCall(title: "Invalid", message: "\(error!.localizedDescription)")
                     }else {
                         guard let uid = user?.uid else{
                             return
@@ -69,7 +77,7 @@ class SignUpVC: UIViewController {
                 alertCall(title: "Passwords Not Matching", message: "Make sure your password macthes.")
             }
         }else{
-            alertCall(title: "Empty FIeld/s", message: "Make sure you fill in all the information")
+            alertCall(title: "Nice Try!", message: "Make sure you fill in all the information")
         }
 
     }

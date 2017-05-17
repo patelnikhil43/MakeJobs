@@ -20,7 +20,6 @@ class TabBarVC: UITabBarController {
         let swiftColor = UIColor(red: 60/255, green: 142/255, blue: 163/255, alpha: 1)
          self.tabBar.backgroundColor = swiftColor
         self.tabBar.barTintColor = swiftColor
-
         
     }
 
