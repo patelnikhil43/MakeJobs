@@ -111,10 +111,10 @@ class FeedVC: UIViewController,  UITableViewDelegate, UITableViewDataSource, CLL
         } else{
             determineMyCurrentLocation()
         }
-      
+ 
         //Color
         let swiftColor = UIColor(red: 63/255, green: 133/255, blue: 145/255, alpha: 0.5)
-        let swiftColor2  = UIColor(red: 94/255, green: 126/255, blue: 168/255, alpha: 0.5)
+        let swiftColor2  = UIColor(red: 78/255, green: 105/255, blue: 150/255, alpha: 0.5)
         if ( indexPath.row % 2 == 0 ){
             cell.backgroundColor = swiftColor
             
@@ -123,7 +123,6 @@ class FeedVC: UIViewController,  UITableViewDelegate, UITableViewDataSource, CLL
             cell.backgroundColor = swiftColor2
         }
         //End of Color
-        
         return cell
     }
     

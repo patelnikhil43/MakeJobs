@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 import CoreLocation
-class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate,  UITextFieldDelegate  {
+class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate,  UITextFieldDelegate, UITextViewDelegate  {
 
     @IBOutlet weak var jobTitleField: UITextField!
     @IBOutlet weak var descriptionField: UITextView!
@@ -71,6 +71,8 @@ class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         postButton.layer.borderColor = UIColor(white: 1.0, alpha: borderAlpha).cgColor
         
         phoneField.delegate = self
+        jobTitleField.delegate = self
+        descriptionField.delegate = self
     }
     
     //Post Button Pressed
@@ -265,10 +267,28 @@ class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     
     //Max Length for Phone Field
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let limitLength:Int = 10
+        let newLength = (textField.text?.characters.count)! + string.characters.count - range.length
+        //let limitLength:Int = 10
         guard let text = textField.text else { return true }
-        let newLength = text.characters.count + string.characters.count - range.length
-        return newLength <= limitLength
+        
+//        let newLength = text.characters.count + string.characters.count - range.length
+//        return newLength <= limitLength
+        
+        if textField == phoneField {
+            return newLength <= 10 // Bool
+        }else if (textField == jobTitleField){
+            return newLength <= 29
+        }
+        return true
+      
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+     
+        if(textView.text.characters.count > 120 && range.length == 0) {
+            return false;
+        }
+        return true;
     }
 
 }

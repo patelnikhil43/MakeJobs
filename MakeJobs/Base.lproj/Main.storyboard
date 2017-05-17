@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -108,28 +107,28 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tMZ-xm-h7K">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="211"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="GN1-kx-EAd">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="211"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     </view>
                                                     <blurEffect style="light"/>
                                                 </visualEffectView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title............." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TSM-CD-vGs">
-                                                    <rect key="frame" x="0.0" y="8" width="375" height="27"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title............." textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TSM-CD-vGs">
+                                                    <rect key="frame" x="0.0" y="8" width="414" height="27"/>
                                                     <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="23"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Fz-ud-VOV">
-                                                    <rect key="frame" x="8" y="43" width="359" height="69"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="clip" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Fz-ud-VOV">
+                                                    <rect key="frame" x="8" y="43" width="398" height="69"/>
                                                     <string key="text">Description...Description...Description...Description...Description...Description...Description...Description...Description...Description...Description...Description...Description...Description...Description...</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                     <color key="textColor" red="0.92514188829999999" green="0.92514188829999999" blue="0.92514188829999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0 Miles Away" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1bk-PA-3dq">
-                                                    <rect key="frame" x="244" y="162" width="123" height="40"/>
+                                                    <rect key="frame" x="283" y="162" width="123" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="HaF-4w-LPy"/>
                                                     </constraints>
@@ -138,7 +137,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location, PA......................................" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbW-bs-ePO">
-                                                    <rect key="frame" x="8" y="120" width="359" height="21"/>
+                                                    <rect key="frame" x="8" y="120" width="398" height="21"/>
                                                     <fontDescription key="fontDescription" name="Georgia-BoldItalic" family="Georgia" pointSize="18"/>
                                                     <color key="textColor" red="0.96294373489999996" green="0.96294373489999996" blue="0.96294373489999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -153,7 +152,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="tC3-TU-RWx">
-                                                    <rect key="frame" x="198" y="161" width="41" height="41"/>
+                                                    <rect key="frame" x="237" y="161" width="41" height="41"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="41" id="9hV-Z1-hiP"/>
                                                         <constraint firstAttribute="height" constant="41" id="baL-ax-rXD"/>
