@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,44 +15,51 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
-                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                        <viewControllerLayoutGuide type="top" id="zBB-5A-gkB"/>
+                        <viewControllerLayoutGuide type="bottom" id="18r-fo-Gxg"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                    <view key="view" contentMode="scaleToFill" id="w1T-Dx-bfn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="abc_video_bg" translatesAutoresizingMaskIntoConstraints="NO" id="M44-iO-yMy">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blurred-background-in-green-color_1035-3316" translatesAutoresizingMaskIntoConstraints="NO" id="Sxe-Kf-GRD">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q67-Oh-udn">
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iyD-uE-Bal">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gep-A4-JT8">
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="qI2-gU-0Fa">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="attachment 1" translatesAutoresizingMaskIntoConstraints="NO" id="lRA-yc-Mru">
+                                            <rect key="frame" x="86" y="254" width="242" height="242"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="242" id="IGw-64-eZi"/>
+                                                <constraint firstAttribute="width" secondItem="lRA-yc-Mru" secondAttribute="height" multiplier="1:1" id="WQt-4j-DKI"/>
+                                                <constraint firstAttribute="height" constant="242" id="uWg-Fb-tfx"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="lRA-yc-Mru" secondAttribute="trailing" constant="86" id="RkV-Rt-zMv"/>
+                                        <constraint firstItem="lRA-yc-Mru" firstAttribute="leading" secondItem="qI2-gU-0Fa" secondAttribute="leading" constant="86" id="Srw-1x-6AN"/>
+                                        <constraint firstItem="lRA-yc-Mru" firstAttribute="top" secondItem="qI2-gU-0Fa" secondAttribute="top" constant="254" id="lvQ-kc-fp7"/>
+                                        <constraint firstAttribute="trailing" secondItem="lRA-yc-Mru" secondAttribute="trailing" constant="86" id="seJ-JM-Pe2"/>
+                                    </constraints>
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="handshake128" translatesAutoresizingMaskIntoConstraints="NO" id="d6f-nN-Lwz">
-                                <rect key="frame" x="143" y="304" width="128" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="att-J7-K7h"/>
-                                    <constraint firstAttribute="width" constant="128" id="i7W-Om-51X"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="q67-Oh-udn" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="5xo-MU-L8h"/>
-                            <constraint firstItem="M44-iO-yMy" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="7rV-MS-P85"/>
-                            <constraint firstItem="d6f-nN-Lwz" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="GUQ-H3-xnG"/>
-                            <constraint firstItem="q67-Oh-udn" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="ZA3-xv-1Ws"/>
-                            <constraint firstItem="M44-iO-yMy" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="dSw-r8-DWa"/>
-                            <constraint firstAttribute="trailing" secondItem="M44-iO-yMy" secondAttribute="trailing" id="dTQ-dS-zCb"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="M44-iO-yMy" secondAttribute="bottom" id="f9L-7Y-0zv"/>
-                            <constraint firstItem="d6f-nN-Lwz" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="i07-HQ-2ce"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="q67-Oh-udn" secondAttribute="bottom" id="v1e-DX-7Pa"/>
-                            <constraint firstAttribute="trailing" secondItem="q67-Oh-udn" secondAttribute="trailing" id="yMx-oK-lKL"/>
+                            <constraint firstAttribute="trailing" secondItem="Sxe-Kf-GRD" secondAttribute="trailing" id="0U0-Vv-ycD"/>
+                            <constraint firstItem="Sxe-Kf-GRD" firstAttribute="top" secondItem="w1T-Dx-bfn" secondAttribute="top" id="7vk-Hi-hk9"/>
+                            <constraint firstAttribute="trailing" secondItem="iyD-uE-Bal" secondAttribute="trailing" id="HYJ-MC-tBn"/>
+                            <constraint firstItem="18r-fo-Gxg" firstAttribute="top" secondItem="iyD-uE-Bal" secondAttribute="bottom" id="PeH-kE-coW"/>
+                            <constraint firstItem="18r-fo-Gxg" firstAttribute="top" secondItem="Sxe-Kf-GRD" secondAttribute="bottom" id="UXG-lU-b6g"/>
+                            <constraint firstItem="iyD-uE-Bal" firstAttribute="leading" secondItem="w1T-Dx-bfn" secondAttribute="leading" id="aZy-j3-dyy"/>
+                            <constraint firstItem="iyD-uE-Bal" firstAttribute="top" secondItem="w1T-Dx-bfn" secondAttribute="top" id="iCs-G7-JEo"/>
+                            <constraint firstItem="Sxe-Kf-GRD" firstAttribute="leading" secondItem="w1T-Dx-bfn" secondAttribute="leading" id="uHg-UZ-BIe"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -65,7 +74,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="abc_video_bg" width="1280" height="720"/>
-        <image name="handshake128" width="128" height="128"/>
+        <image name="attachment 1" width="474" height="516"/>
+        <image name="blurred-background-in-green-color_1035-3316" width="626" height="626"/>
     </resources>
 </document>

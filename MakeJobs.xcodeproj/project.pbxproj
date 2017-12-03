@@ -51,6 +51,9 @@
 		317B9BFA1EC6BDE000F24216 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317B9BF91EC6BDE000F24216 /* SignUpVC.swift */; };
 		317B9BFD1EC6D2B300F24216 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317B9BFC1EC6D2B300F24216 /* FeedVC.swift */; };
 		317B9C011EC7614A00F24216 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 317B9C001EC7614A00F24216 /* GoogleService-Info.plist */; };
+		31A329E21FD3282D0020696F /* MoneyBunnyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A329E11FD3282C0020696F /* MoneyBunnyVC.swift */; };
+		31A329E41FD350650020696F /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A329E31FD350650020696F /* Article.swift */; };
+		31A329E61FD351940020696F /* WebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A329E51FD351940020696F /* WebVC.swift */; };
 		6F6346508B62DE95620A1D7D /* Pods_MakeJobs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE69EB3CD021B29007199AE1 /* Pods_MakeJobs.framework */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +105,9 @@
 		317B9BF91EC6BDE000F24216 /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		317B9BFC1EC6D2B300F24216 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		317B9C001EC7614A00F24216 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		31A329E11FD3282C0020696F /* MoneyBunnyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoneyBunnyVC.swift; sourceTree = "<group>"; };
+		31A329E31FD350650020696F /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		31A329E51FD351940020696F /* WebVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebVC.swift; sourceTree = "<group>"; };
 		4181C612292FA6F4ADB45F90 /* Pods-MakeJobs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MakeJobs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MakeJobs/Pods-MakeJobs.debug.xcconfig"; sourceTree = "<group>"; };
 		AE69EB3CD021B29007199AE1 /* Pods_MakeJobs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MakeJobs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1AAF9DEA955A9CCEF97E4DB /* Pods-MakeJobs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MakeJobs.release.xcconfig"; path = "Pods/Target Support Files/Pods-MakeJobs/Pods-MakeJobs.release.xcconfig"; sourceTree = "<group>"; };
@@ -283,6 +289,9 @@
 				3102BDE31EC984DC0097DA91 /* ImageVC.swift */,
 				3102BDE71EC9AAE80097DA91 /* SignOutVC.swift */,
 				3102BDE91EC9CB360097DA91 /* MapVC.swift */,
+				31A329E11FD3282C0020696F /* MoneyBunnyVC.swift */,
+				31A329E51FD351940020696F /* WebVC.swift */,
+				31A329E31FD350650020696F /* Article.swift */,
 			);
 			name = VCs;
 			sourceTree = "<group>";
@@ -445,9 +454,11 @@
 				3102BE171ECC2BA40097DA91 /* IQUIScrollView+Additions.swift in Sources */,
 				317B9BE41EC69EF800F24216 /* SignInVC.swift in Sources */,
 				3102BDD81EC771850097DA91 /* User.swift in Sources */,
+				31A329E21FD3282D0020696F /* MoneyBunnyVC.swift in Sources */,
 				3102BE181ECC2BA40097DA91 /* IQUITextFieldView+Additions.swift in Sources */,
 				3102BDDA1EC7772F0097DA91 /* PostVC.swift in Sources */,
 				3102BDDE1EC7D5D00097DA91 /* TabBarVC.swift in Sources */,
+				31A329E41FD350650020696F /* Article.swift in Sources */,
 				3102BE211ECC2BA40097DA91 /* IQBarButtonItem.swift in Sources */,
 				317B9BFA1EC6BDE000F24216 /* SignUpVC.swift in Sources */,
 				3102BE161ECC2BA40097DA91 /* IQNSArray+Sort.swift in Sources */,
@@ -458,6 +469,7 @@
 				3102BDF21ECBE5AB0097DA91 /* StarbucksAnnotation.swift in Sources */,
 				3102BE221ECC2BA40097DA91 /* IQPreviousNextView.swift in Sources */,
 				3102BDE81EC9AAE80097DA91 /* SignOutVC.swift in Sources */,
+				31A329E61FD351940020696F /* WebVC.swift in Sources */,
 				3102BE231ECC2BA40097DA91 /* IQTitleBarButtonItem.swift in Sources */,
 				3102BE241ECC2BA40097DA91 /* IQToolbar.swift in Sources */,
 			);

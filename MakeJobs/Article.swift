@@ -6,4 +6,14 @@
 //  Copyright © 2017 Nikhil. All rights reserved.
 //
 
-import Foundation
+
+import UIKit
+
+class Article: NSObject {
+    
+ 
+    var url: String?
+
+    
+    
+}

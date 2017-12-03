@@ -17,6 +17,7 @@ class SignUpVC: UIViewController {
     @IBOutlet weak var passworrdField: UITextField!
     @IBOutlet weak var confirmPassword: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var currentBalance: UITextField!
     
 
     override func viewDidLoad() {
@@ -55,10 +56,11 @@ class SignUpVC: UIViewController {
 
     @IBAction func letsGoPressed(_ sender: Any) {
         
-        if (nameField.text != "") && (emailField.text != "") && (passworrdField.text !=  "") && (confirmPassword.text != "") {
+        if (nameField.text != "") && (emailField.text != "") && (passworrdField.text !=  "") && (confirmPassword.text != "") && (currentBalance.text != "") {
             if (confirmPassword.text == passworrdField.text){
                 let name = nameField.text
                 let email = emailField.text
+                let balance = currentBalance.text
                 let password = passworrdField.text
                 FIRAuth.auth()?.createUser(withEmail: email!, password: password!, completion: { (user, error) in
                     if error != nil {
@@ -68,7 +70,7 @@ class SignUpVC: UIViewController {
                         guard let uid = user?.uid else{
                             return
                         }
-                        let values  = ["name" : name, "email" : email]
+                        let values  = ["name" : name, "email" : email, "balance" : balance]
                         self.registerUserIntoDatabaseWithUID(uid: uid, values: values as [String: AnyObject])
                          ////Going to Register User into Database
                     }//End of Else

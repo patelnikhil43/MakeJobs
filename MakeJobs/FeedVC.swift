@@ -70,6 +70,7 @@ class FeedVC: UIViewController,  UITableViewDelegate, UITableViewDataSource, CLL
         FIRDatabase.database().reference().child("Posts").observeSingleEvent(of: .value, with: { (snapshot) in
             print(snapshot)
             if let postDictionary = snapshot.value as? [String: AnyObject]{
+                
                 for post in postDictionary {
                     self.posts.add(post.value)                    // Basically adds all the values in snapshot to array posts using for loop
                 }
